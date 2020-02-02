@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>List of mails</title>
+</head>
+<body>
+    <h1>{{title}}</h1>
+	<table border="1">
+        <tr>
+            <th>Subject</th>
+            <th>Text message</th>
+            <th>Email address</th>
+            <th>Delay</th>
+            <th>Is send</th>
+        </tr>
+        {% for mail in mails %}
+            <tr>
+                <td>{{ mail.subject }}</td>
+                <td>{{ mail.message }}</td>
+                <td>{{ mail.to_email }}</td>
+                <td>{{ mail.delay }}</td>
+                {% if mail.sended %}
+                    <td><input type="checkbox" checked disabled></td>
+                {% else %}
+                    <td><input type="checkbox" disabled></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+    <p>New <a href="/">message</a>
+</body>
+</html>
