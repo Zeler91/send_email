@@ -26,7 +26,7 @@ SECRET_KEY = 's59-sdx!r*#vjq9u(7njr%y$%aoo$g5ny90nheh95_&o&ry6fh'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+DISABLE_COLLECTSTATIC=1
 
 # Application definition
 
